@@ -1,0 +1,150 @@
+trax {
+
+Program
+	= "ready" Identifier VariableDeclarations? MethodDeclarations? Body
+    
+VariableDeclarations
+	= "set" VariableDeclaration*
+ 
+MethodDeclarations
+ 	= "trax" MethodDeclaration*
+    
+WhileLoopStatement
+	= "while" Expression "do" Statement
+    
+IfThenElseStatement
+	= "if" Expression "then" Statement "else" Statement
+    
+IfThenStatement
+	= "if" Expression "then" Statement
+    
+MethodDeclaration
+	= FunctionDefinition
+	| ProcedureDefinition
+    
+FunctionDefinition
+	= "ready" Identifier ParameterList ReturnType VariableDeclarations? Body
+
+ProcedureDefinition
+	= "ready" Identifier ParameterList VariableDeclarations? Body
+
+ParameterList
+	= "("  (ParameterDefinition ("," ParameterDefinition)*)? ")"
+
+ParameterDefinition
+	= Identifier "|" Type
+
+ReturnType
+	= "|" Type
+    
+Body
+	= "go" Statement?
+
+Statement
+	= CompoundStatement
+    | WhileLoopStatement
+    | IfThenElseStatement
+    | IfThenStatement
+    | ProcedureCallStatement
+    | AssignmentStatement
+    | OutputStatement
+    | LapStatement
+    
+CompoundStatement
+	= "begin" Statement* "end"
+   
+AssignmentStatement
+	= Variable "<-" Expression
+    
+OutputStatement
+	= "out" Expression
+    
+LapStatement
+	= "lap"
+    
+Expression
+	= FunctionCallExpression
+    | LogicalExpression
+    | RelationalExpression
+    | ArithmeticExpression
+    | CompoundExpression
+    | Variable
+    | LiteralValue
+    
+CompoundExpression
+	= "(" Expression ")"
+    
+LogicalExpression
+	= LogicalAndOr
+    | LogicalNot
+    
+LogicalAndOr
+	=  Expression "and" Expression
+    | Expression "or" Expression
+    
+LogicalNot
+	= "not" Expression
+    
+RelationalExpression
+	= Expression RelationalOperator Expression
+    
+ArithmeticExpression
+	= Expression ArithmeticOperator Expression
+
+ProcedureCallStatement 
+	= Identifier ArgumentList
+    
+FunctionCallExpression
+	= Identifier ArgumentList
+    
+ArgumentList
+	= "(" (Expression ("," Expression)*)? ")"
+    
+Variable
+	= Identifier
+ 
+ VariableDeclaration
+	= Identifier "|" Type
+    
+Type
+	= "#"
+    | "\""
+    |"?"
+    
+RelationalOperator
+	= ">"
+    | "<"
+    | "="
+    
+ArithmeticOperator
+	= "*"
+    | "rem"
+    | "/"
+    | "+"
+    | "-"
+    
+LiteralValue
+	= literalInteger
+    | literalBoolean
+    | literalString
+    
+literalInteger
+	= "-"?digit+
+    
+literalBoolean
+	= "true" | "false"
+    
+literalString
+	= "\"" (~"\"" any | "\"\"") "\""
+	| "\"" (~"\"" any | "\"\"")* "\""
+    
+Identifier
+	= ~ReservedWord word
+
+ReservedWord
+	= "true" | "false" | "if" | "then" | "else" | "while" | "begin" | "end" | "ready" | "set" | "go" | "out" | "lap" | "and"
+    | "or" | "not"
+    
+word
+	= letter alnum*
+}

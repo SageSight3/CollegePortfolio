@@ -1,0 +1,69 @@
+mysql> select nations.name, nations.Pop, Religions.Religion, Religions.percent, nations.Pop * (Religions.percent/100) from nations INNER JOIN Religions ON Religions.Code = nations.Code where name="Germany" and Religion="Muslim";
++---------+----------+----------+---------+---------------------------------------+
+| name    | Pop      | Religion | percent | nations.Pop * (Religions.percent/100) |
++---------+----------+----------+---------+---------------------------------------+
+| Germany | 80159700 | Muslim   |     1.7 |                    1362714.3262231064 |
++---------+----------+----------+---------+---------------------------------------+
+1 row in set (0.00 sec)
+
+gets the muslim population of Germany from the religions and nations table
+
+mysql> select SUM(Pop) from nations where map="Europe";
++-----------+
+| SUM(Pop)  |
++-----------+
+| 547930332 |
++-----------+
+1 row in set (0.01 sec)
+sums total population of all nations in Europe
+
+mysql> SELECT nations.name, borders.Code2 FROM borders INNER JOIN nations ON borders.Code2=nations.Code WHERE Code1="rs";
++--------------+-------+
+| name         | Code2 |
++--------------+-------+
+| Ukraine      | up    |
+| Norway       | no    |
+| Mongolia     | mg    |
+| Lithuania    | lh    |
+| Latvia       | lg    |
+| Korea, North | kn    |
+| Kazakhstan   | kz    |
+| Georgia      | gg    |
+| Finland      | fi    |
+| Estonia      | en    |
+| China        | ch    |
+| Belarus      | bo    |
+| Azerbaijan   | aj    |
++--------------+-------+
+13 rows in set (0.00 sec)
+gets all nations that border Russia
+
+alt that gets Code1="rs" off country name in nations:
+
+mysql> SELECT nations.name, borders.Code2 FROM borders INNER JOIN nations ON borders.Code2=nations.Code WHERE Code1=(SELECT Code FROM nations WHERE name = "Russia");
+
++--------------+-------+
+| name         | Code2 |
++--------------+-------+
+| Ukraine      | up    |
+| Norway       | no    |
+| Mongolia     | mg    |
+| Lithuania    | lh    |
+| Latvia       | lg    |
+| Korea, North | kn    |
+| Kazakhstan   | kz    |
+| Georgia      | gg    |
+| Finland      | fi    |
+| Estonia      | en    |
+| China        | ch    |
+| Belarus      | bo    |
+| Azerbaijan   | aj    |
++--------------+-------+
+13 rows in set (0.01 sec)
+
+select count(*) from <table name>;
+	returns number of rows in a table
+	
+For limit, don't put = sign
+
+SELECT * FROM <table name> ORDER BY <col name> LIMIT 4; <-- valid

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<script id="advGame" scr="AdvGame.json" type="application/json"></script>-->
+    <script defer src="AdvGame.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="AdvGame.css">
+    <title>Stardust I</title>
+</head>
+<body id="bg">
+    <p id="credit">Built off and inspired by the Avali, by RyuujinZERO. All original information and references to them and their lore are 
+        liscensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">Creative Commons Attribution-ShareAlike License 3.0 Unported</a>
+    </p>
+    <div id="game">
+        <div id="story">
+        </div>
+
+        <div id="choices">
+        </div>
+    </div>
+</body>
+<script id="advGame" type="application/json">
+    {
+        "scenes": [
+            {
+                "sceneID": "start",
+                "endingType": "none",
+                "flavorText": "You are one of a pioneering pack of avali, an avian race, from the icy moon, Avalon, in orbit of it's parent gas giant, Ralla. Recently, a mysterious plannet, dubbed <b>Virtual</b>, has mysteriously appeared in the Aya star system, Avalon's parent star. You and your pack have been tasked with the first ever crewed mission there, and now wait on the launch pad in the cockpit of the Stardust I Aero, an SSTO (single stage to orbit) spaceplane ready to take you to the vessel you will call home for the next 3-5 years. The sun is out, and the eyes of avali everywhere are upon you. A new era has begun.",
+                "images": "",
+                "bgImg": "",
+                "choices": [
+                    {
+                        "choiceID": "launch",
+                        "choiceText": "Proceed to launch"
+                    }
+                ]
+            },
+            {
+                "sceneID": "launch",
+                "endingType": "none",
+                "flavorText": "The first part of the mission is fairly straight forward. Take off, and begin the multi-hour ascent to Avalon's upper atmosphere, in which you and your crewmates will circle the globe multiple times, before eventually switching from jet to rocket power to execute an orbital insertion burn and dock with the main vessel, fondly nicknamed the <i>Egg</i> by her engineers. Once docked, your sights will shift to Avalon's sister moon, Navari, and Ralla herself, for fuel harvesting and systems test before the long voyage to Virtual. However, a storm has rolled in from the coastline, and will intersect your launch trajectory. After being radioed by Stardust Mission Control (SMC) though, it's become clear, that if you don't launch now, it may be months, or even years before a window as good as this one returns. SMC has left the decision to you and your pack. What will you do?",
+                "images": "storm.gif",
+                "bgImg": "",
+                "choices": [
+                    {
+                        "choiceID": "stormLaunch",
+                        "choiceText": "Launch now"
+                    },
+                    {
+                        "choiceID": "delayLaunch",
+                        "choiceText": "Wait for the storm to pass"
+                    }
+                ]
+            },
+            {
+                "sceneID": "stormLaunch",
+                "endingType": "none",
+                "flavorText": "Steeling your nerves. You and your packmates share a determined look, and proceed to your stations. Outside the cockpit, the flaps of the Aero lower, and the sound of the engines revving up whirs into a muffled and high pitched scream. You feel the ground begin to move underneath you. This is it. Feeling your bodies begin to press into your seats, the Aero's nose angles upwards allowing you a first glipse at the darker clouds of the coming storm. Then, only senconds later, you feel a small bounce, and the rumbling of the ground vanishes. Stardust I has offically begun.",
+                "images": "",
+                "bgImg": "",
+                "choices": [
+                    {
+                        "choiceID": "autopilot",
+                        "choiceText": "Engage autopilot"
+                    },
+                    {
+                        "choiceID": "scoutStorm",
+                        "choiceText": "Survey the storm more closely"
+                    }
+                ]
+            },
+            {
+                "sceneID": "delayLaunch",
+                "endingType": "none",
+                "flavorText": "After much discussion with your pack, you give a gusty sigh and admit that the danger is too great. While the launch's flight path would likely lead to some perilous skies, to attempt to traverse them in the lowest part of the atmosphere could be a fool's errand. The wind in the jet streams at the top of the jet stream could be merciless, where the methane barrier that sealed in most of the moon's heat ended, and occassionally became dangerous as radiation from Aya and Ralla alike could cause it to act sporadiaclly. At best, to launch now would waste fuel and risk damage to the Aero. At worst, the engines could become clogged or pelted by hail, and you and your packmates would fall from the sky in a fiery wreck. The storm pelted the launch site for days on end, and when it was finally over, it was clear the Aero hadn't been left unscathed. Yet, as you begin examining the damage, you receive an excited radio transmission from SMC. The storm had ended early, leavng just barely enough time for Stardust I to make the launch window, on the condition you leave immediately. So far, dmage to the Aero, didn't seem too severe, the most notable blemish being a small dent in one of the engines. Leaving now though would forego closer inspection and potential repairs though. This could be a second chance, but is it worth the risk?",
+                "images": "",
+                "bgImg": "",
+                "choices": [
+                    {
+                        "choiceID": "damagedLaunch",
+                        "choiceText": "Take the shot"
+                    },
+                    {
+                        "choiceID": "nextWindow",
+                        "choiceText": "Wait for the next launch window"
+                    }
+                ]
+            },
+            {
+                "sceneID": "autopilot",
+                "endingType": "bad",
+                "flavorText": "Raising the Aero's flaps, you continue to gaze warily at the storm looming ahead. The gray clouds churn menacingly, as though mocking your challenge. Nevertheles, you push on, grimly reassuring yourself, as you switch on the autopiot. The Aero was designed to withstand the fury of Ralla's upper atmosphere, comparatively, even only just above the surface, the lightning on Avalon paled in comparison. As you stand up to begin in-flight systems checks though, a shiver of dread tickles the back of your mind. A half hour later, you and your pack are fully engulfed in the deluge. The hull of the Aero shakes and rattles as hail pelts it from all sides. Suddenly, you hear a bang, and the floor beneath you violently sways. An alarm is blaring, and you hear one of your packmates call out that the right engine had blown. Before you can react though, a searing heat seizes you, and a raging orange glow is the last thing you remember, before everything goes black.",
+                "images": "",
+                "bgImg": "",
+                "choices": 0
+            },
+            {
+                "sceneID": "scoutStorm",
+                "endingType": "none",
+                "flavorText": "Raising flaps, you initially change course off your mission trajectory. One of your packmates has moved from the cockpit to the labs to set the Aero's science suite on the storm ahead. A few moments, later, you hear a report over the radio. At first,it seemed that the storm was likely of volcanic origin, the result of a cryo-volcanic eruption beneath the waves of Avalon's oceans spewing a mix of liquid water and toxic gasses into the atmosphere as caused by the immense tidal forces exerted on the moon by Ralla. No eruption had been reported in recent months though, nor any irregularities in seismic activity. Volcanism didn't make sense. More worryingly, was the storm was likely result of a stray meteor that evaded Avalon'd detection coming down and detonating over the sea, abruptly filling the surrounding atmosphere with it's contents. It would explain the storm's sudden appearance, s well as the rapdidity of it's growth in power. Either way, it came as welcome relief that you and your crew had taken pause. While on the ground, ice storms like these were no more then particuarly bad weather, in the clouds, they could be lethal, as coupled with the extremely cold temperatures of Avalon's climate, Avalon's low gravity (only 2.5m/s^2) means massive chunks of water ice, whether or originally frozen or not, were capable of staying suspended in the high winds. If the Aero were to be hit by one of them, it could easily spell tragedy. However, your packmate also reported the storm appeared to have formed a cyclone, which meant that if you flew below the clouds, you'd theoretically be able to straight shot through the storm eye at it's center. It would mean flying through the worst of the torrent, but it would be your safest option, if Stardust I was still to make the launch window. Time is ticking, and Virtual is waiting. Is the risk worth it?",
+                "images": "",
+                "bgImg": "",
+                "choices": [
+                    {
+                        "choiceID": "turnBack",
+                        "choiceText": "Turn Back"
+                    },
+                    {
+                        "choiceID": "eyeShot",
+                        "choiceText": "Fly for the eye"
+                    }
+                ]
+            },
+            {
+                "sceneID": "damagedLaunch",
+                "endingType": "bad",
+                "flavorText": "Gritting your teeth, and flexing your hands apprehensively, you choose to commit to the mission, and after a scrambled together preparation, and media report, you and your pack find yourselves on the runway again, ready for takeoff. A hasty clearance for launch sounds over the radio, and the Aero's main engines suddenly come to life. You push the throttle to max, and feeling the ground start to thunder beneath you, the Aero begins to accelerate. Flaps are in takeoff position and your heart races. Any moment now. Abruptly, a quaking boom shakes the air around you, and you feel yourself squashed to the side of your chair, as you start to turn. The sound of metal scraping the runway screeches, and you can feel the Aero beginning to flip. Heat hazes behind you, and frantically unbuckling your seatbelt, you jump. Then, you're in the open air, a fireball of burning fuel and metal grinding the runway below. Flapping your arms, you catch yourself and dodge to and fro, as sparks shoot out in all directions from the fragmenting hull. When the scraping finally stops, the Aero is barely more than a pile of scrap, unrecognizeable in its debris field. Three of your packmates now stand with you at the side of the runway, and another pulled themselves from the wreckage, but two of you are still unaccounted for. The shock and sorrow in your packmate's eyes reflecting your own, you stumble backwards, consumed in thoughts of horror and flame, as everything around you fades into nothing.",
+                "images": "",
+                "bgImg": "",
+                "choices": 0
+            },
+            {
+                "sceneID": "nextWindow",
+                "endingType": "good",
+                "flavorText": "Conversing with your pack, as saddened as it makes you all, you choose to forego the launch window. Space is dangerous, and for all the innovation your technology had undergone over the course of history, nature always seems to have a way of humbling those who think they can best her. If the avali were to travel beyond their teal-blue giant, they had to respect that. Aero needed to be in her best condition for Stardust. This was the right thing to do, and as you and your pack sit upon the wing of your starfarer, looking out over the dim light of Aya dipping beneath the horizon, you feel somehow reassured. A thought strangely certain crosses your mind, filling you with rekindled hope and excitement. The avali <i>will</i> reach Virtual, and one day, even if far from now, they <i>will</i> be among the stars.",
+                "images": "",
+                "bgImg": "",
+                "choices": 0
+            },
+            {
+                "sceneID": "turnBack",
+                "endingType": "good",
+                "flavorText": "Knowing better than to challenge the storms and fury of Avalon and Ralla, you admit defeat. It was true that virtual appeared out of nowhere, and it was true that it could vanish in an instant, but if that was it's fate, it was not for the colonies of Avalon or any avali to oppose it. Radioing back to SMC you turn the Aero around and begin to descend. The storm would pass and Stardust, one day, would launch. All you need is to wait.",
+                "images": "",
+                "bgImg": "",
+                "choices": 0
+            },
+            {
+                "sceneID": "eyeShot",
+                "endingType": "bad",
+                "flavorText": "Taking a breath, you set course for the storm, apprehension running through you. The Aero's altitude control was set to take you beneath the cloud layer, and your plan was set. Reach the center, then ride the eye wall to above the clouds. If all went well, the worst you'd face were some parting rains before leaving the familiar sky of home behind. The midday light begins to dim as you start crossing into the rainbands lining the storm's center, and the Aero's hull begins to rattle from falling hail. Deeper in, a warning flicks on. The Aero's left engine is icing over, but it's too late now. To turn back for open sky now would take longer than reaching the eye. Thankfully, the afternoon light had appeared up ahead, signaling that you were nearly there. Pulling up gently, you angle the Aero so that she'll just graze the clouds before entering the eye. A moment before reaching it though, the warning light goes red, and you hear the left engine begin to sputter. A second later, the Aero begins to lose control from the difference in thrust between its wings, and you start to fall. You're turning, and you realize in a brief panic, that you've stalled into a tailspin. Pushing the nose down and left as hard as you can, you attempt to lean into the motion to regain control, but its futile. The Aero wasn't designed with agile maneuvering in mind. Keeping fear down, you and your packmates unfasten your seatbelts and jettison the cockpit's emergency door. Giving a strong flap of your arms, you, with the rest of your pack, take flight out of the falling spacecraft and watch as it spirals to the ground below.",
+                "images": "",
+                "bgImg": "",
+                "choices": 0
+            }
+        ]
+    }
+</script>
+</html>

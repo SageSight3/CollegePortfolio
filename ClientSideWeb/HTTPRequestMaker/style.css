@@ -1,0 +1,43 @@
+body {
+    background-color: skyblue;
+}
+
+#heading {
+    text-align: center;
+}
+
+#urlInfo {
+    text-align: center;
+}
+
+#params {
+    display: flex;
+
+    /*https://www.educative.io/answers/how-to-align-items-to-the-center-using-flexbox*/
+    /*aligns params's container divs to its center */
+    justify-content: center;
+
+    /*debug
+    border: solid;
+    border-color: red;*/
+}
+
+/*how do in align the containers in the center of the page?*/
+.paramsContainer {
+    text-align: center;
+    /*debug
+    border: solid;
+    border-color: yellow;*/
+}
+
+.paramsContainer, .paramsContainer input {
+    margin: 2px;
+}
+
+#results {
+    text-align: center;
+}
+
+#resultsLabel {
+    vertical-align: top;
+}

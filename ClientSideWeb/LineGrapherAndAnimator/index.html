@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vue.global.js"></script>
+    <!--remember to defer app script-->
+    <script defer src="client.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Vue Ref and Lifecycle Hooks</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <h2>Spline with {{numOfNodes}}</h2>
+            <!--ask about what ref is-->
+            <canvas ref="splineDisplay" class="left" width="400" height="400">
+                Sorry, your browser doesn't support canvas.
+            </canvas>
+            <br>
+            <!--v-model is a two way binding between an html attribute and reactive property in a Vue app-->
+            <!--@input is another way of saying v-on:input-->
+            <input v-model="backColor" @input="redrawEverything" type="color">&nbsp; <!--&nbsp; non-breaking-space, a space char that HTML won't consider whitespace-->
+            <input v-model="linesPerNode" @input="redrawEverything" type="number" min="1" max="100">
+            <button v-on:click="addNode" type="button">Add Node</button><br>
+            <button v-on:click="startAnimation" type="button">Start Animation</button>
+            <button v-on:click="stopAnimation" type="button">Stop Animation</button>
+        </div> 
+        <div>
+            <h2>Node List to Generate Spline</h2>
+            <!--node is the value of nodes at nodes[index]-->
+            <div id="nodeList" v-for="(node, index) of nodes" :key="node.id">
+                X:&nbsp;
+                <span>
+                    <input type="number" @input="redrawEverything" v-model.number="node.x" min="0" max="400" step="10"><br>
+                    <input type="range" @input="redrawEverything" v-model.number="node.x" min="0" max="400">
+                </span>
+
+                &nbsp;&nbsp;&nbsp;Y:&nbsp;
+                <span>
+                    <input type="number" @input="redrawEverything" v-model.number="node.y" min="0" max="400" step="10"><br>
+                    <input type="range" @input="redrawEverything" v-model.number="node.y" min="0" max="400">
+                </span>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;DeltaX:&nbsp;
+                <span>
+                    <input type="number" @input="redrawEverything" v-model.number="node.deltaX" min="-10" max="10"><br>
+                    <input type="range" @input="redrawEverything" v-model.number="node.deltaX" min="-10" max="10">
+                </span>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;DeltaY:&nbsp;
+                <span>
+                    <input type="number" @input="redrawEverything" v-model.number="node.deltaY" min="-10" max="10"><br>
+                    <input type="range" @input="redrawEverything" v-model.number="node.deltaY" min="-10" max="10">
+                </span>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <span>
+                    <input type="color" @input="redrawEverything" v-model.color="node.color">
+                </span>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <span>
+                    <button @click="deleteNode(index)" type="button">&#10060;</button>
+                </span>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>

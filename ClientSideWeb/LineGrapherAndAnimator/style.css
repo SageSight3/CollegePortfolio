@@ -1,0 +1,13 @@
+#app {
+    display: flex;
+    column-gap: 30px;
+    align-items: flex-start;
+}
+
+#nodeList {
+    display: flex;
+    background-color: lightskyblue;
+    margin-top: 8px;
+    padding: 10px;
+    border-radius: 10px; /*don't use percents for border radius, the may affect border radius differently than other units*/
+}

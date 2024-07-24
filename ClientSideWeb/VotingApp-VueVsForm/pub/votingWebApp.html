@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vue.global.js"></script>
+    <script defer src="client.js"></script>
+    <title>Voting System</title>
+</head>
+<body>
+    <div id="app">
+        <!--GET is considered a safe method, it should be kept to read-only operations-->
+        <div>
+            <button @click="fetchNumCandidates">Get Candidate Count</button>
+        </div>
+
+        <br>
+
+        <!--POST is generally used for operations that modify internal server state-->
+        <div>
+            <label for="candidate">Person to vote for:</label>
+            <!--the name attribute is the variable name that will be sent to the server-->
+            <input type="text" id="candidate" v-model="candidate"><br>
+            <button @click="recordVote">Vote for Candidate</button>
+        </div>
+
+        <div>
+            <label for="candidate">Person to vote for:</label>
+            <!--the name attribute is the variable name that will be sent to the server-->
+            <input type="text" id="candidate" v-model="candidate"><br>
+            <button @click="getVotesForCandidate">Get Votes</button>
+        </div>
+
+        <div>
+            <label for="pw">Voting System Reset Password:</label>
+            <!--the name attribute is the variable name that will be sent to the server-->
+            <input type="password" id="pw" v-model="pw"><br>
+            <button @click="resetVotes">Reset Voting System</button>
+        </div>
+        
+        <div>
+            <button @click="getTotalVotes">Get Total Votes</button>
+        </div>
+
+        <pre>
+            {{feedback}}
+        </pre>
+    </div>
+</body>
+</html>

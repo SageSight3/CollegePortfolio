@@ -1,0 +1,29 @@
+body {
+    background-image: url('./images/AvaliFlag.webp');
+    background-size: 100% auto;
+    font-family: Orbitron, sans-serif;
+}
+
+#game {
+    margin-top: 9em;
+    color:white;
+    border-radius: 3%;
+}
+
+#story {
+    text-align: center;
+}
+
+#choices {
+    text-align: center;
+}
+
+#credit {
+    text-align: center;
+    font-size: .75em;
+    color:white;
+}
+
+a:visited, a:link, a:active, a:hover {
+    color: white;
+}

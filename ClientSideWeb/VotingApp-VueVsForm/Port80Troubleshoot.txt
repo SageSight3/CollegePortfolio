@@ -1,0 +1,3 @@
+in cmd or powershell
+	netstat -o to view active connections
+	NET stop HTTP to stop all connections on port 80

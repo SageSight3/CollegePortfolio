@@ -1,0 +1,89 @@
+Week 1:
+	+4 - patterns (Pair Programming, Test First Development)
+Week 2:
+	+8 - patterns (init, clone, add, push)
+Week 3:
+	+1 - pattern - Singleton - incomplete
+Week 4:
+	+1 - pattern edit - Singleton - still unsure
+Week 5:
+	+4 - Observer Pattern
+	+1 - Singleton Edit, finished
+	+1 - started MVC, and added files for System Context and Use Case
+Week 6: 
+	+1 - made senior project repo
+	+2 - pattern - Senior Project Repo - Pomodoro Technique
+	+3 - pattern - Senior Project Repo - Front first development 
+	+2 - pattern - Senior Project Repo - Lo-fi prototyping
+	+1.5 - pattern - Senior Project Repo - rewrote test first development
+	+1 - updates - Senior Project Repo -  updated index and added filed for 
+		requirements analysis	
+	+2 pattern additions - added files for Defining Actors and Issues List, 
+		templated empty patterns updated index, updated current tasks (senior
+		project repo)
+	+2 DCH Proposal requirements
+	+2 DCH Proposal actors and descriptions
+	+2 DCH Proposal system context
+	+2 DCH Proposal use case names
+	+2 DCH Proposal Issue Policy use case
+	+3 DCH Proposal Issues List
+	+1 made script for adding, committing, and pushing to repo for senior project
+Week 7:
+	+1.25 - Senior Project Repo - reorganized project dir
+	+6 - Senior Project Repo - created mockup of a system subdir in analysis and its files -> UseCase.md, IssuesList.md, Analysis.md\
+	+.25 - Senior Project Repo - reflection - issues list
+	+.75 - Senior Project Repo - further outlined structure oflofi prototype 
+	       contents
+	+.25 - Senior Project Repo - reflection - design structure
+	+.5 - Senior Project Repo - added glossary to SystemSubdirEx and linked it in
+	      its example analysis
+	+5 - DCH Proposal - transferred DCH proposal to digital  
+	+.7 - DCH Proposal - brainstormed more use case names
+	+.75 - DCH Proposal - updated issues list
+	+3 - DCH Proposal - added glossary
+	+1.25 - DCH Proposal - made digital image of system context in ms paint
+	+.25 - DCH Proposal - added Important Considerations section to use case and
+		note issue charge and policy step of conversation
+Week 8:
+	+3 - began design patterns
+Week 9:
+	+6 - pattern - Template Method
+		+3 - pattern, itself
+		+3 - learning java
+	+5.5 - UI Specification (Incomplete), may need help
+Week 10:
+	+7 CRCApp code start and some analysis
+Week 11:
+	+5 prio patterns key points (Abstract Factory, Application, Builder, Button, 		Factory Method)
+	+3 ClassSpecificationsV2 list and class desc view
+	+1 ClassSpecificiationsV2 saveOn: aStream
+	+2 pair programming - on Andrea's repo
+	+1 ClassSpecificationsV2 updated ClassSpecification description method to use a stream
+Week 12:
+	+5 prio pattern key points (Text View, Menu, Specification, Command, Dependency Injection)
+	+4 ClassSpecificationsV2 - removeClassSpecification, placeholder addClassSpecification
+		learned squeak
+	+2 ClassSpecificationsV2 - updated to new app framework and new browser code
+		reimplemented delete and save buttons, and delete specification method
+	+1 Visiter Pattern key points
+Week 13
+	+4 - Senior Project Repo - Map Generator analysis doc
+	+.5 - Senior Project Repo - Mimic directory setup
+	+1 - Senior Project Repo - base points of Mimic Hub analysis doc
+	+1 - Senior Project Repo - Map Generator glossary terms - generation values, full map, submap
+	+1 - Senior Project Repo - Map Generator glossary terms - pass, pass granularity, Map GIS
+	+3 - Senior Project Repo - base points of Map GIS analysis doc
+	+.5 - Senior Project Repo - base points for Mimic Hub anylysis doc
+	+2 - Senior Project Repo - Map Generator analysis doc updates
+	+.25 - Senior Project Repo - To-Do list update
+	+3 - Senior Project Repo - Mimic App Overview
+	+1.5 - Senior Project Repo - Mimic UI Brainstorm
+	+1 - Senior Project Repo - started Mimic Hub analysis doc
+	+1 - Senior Project Repo - started Map GIS analysis doc
+	+.25 - Senior Project Repo - To-Do list update
+	+1 - Senior Project Repo - for general edits throughout analysis files
+	+5.5 - Senior Project Repo - StagnatedProgress Reflection and  changes to dev process
+	+.2 - Senior Project Repo - added obsolete docs from original senior project idea to repo
+
+
+

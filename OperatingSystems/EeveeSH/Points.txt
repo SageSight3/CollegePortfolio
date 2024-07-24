@@ -1,0 +1,120 @@
+THIS IS OUT OF 24 POINTS!!!!  No one can get more than 24 points.
+
+    EXEC STUFF
+>>>	1 Can run an executable.  I type in some full path, and you exec it.
+		/bin/ls
+	3 You search the path for the executable
+		ls
+	2 Can run commands in the background.
+		processImage &
+	2 Concatenate commands with &&.  Only runs next command if the previous command returned success.
+		cd /home/rappleto && rm fred.txt
+		
+    REDIRECTION STUFF
+>>>	3 Can do file input redirection "<"
+		wc < fred
+>>>	3 Can do file output redirection ">"
+		ls > fred
+>>>	3 Can do file output redirection append mode ">>"
+		ls >> fred
+	5 Can do command piping "|"
+		https://tldp.org/LDP/lpg/node11.html
+		ls | wc
+	+1 Can do lots of pipes
+		ls | grep fred | wc
+	1 Can do at least one combination of these things
+		ls | wc > fred
+	4 Can do every possible combination of three of <, >, and | 
+		cat < filename | sort > sortedFile.txt
+		
+    ENVIORNMENT VARIABLE STUFF
+>>>	1 Can set enviornment variables
+		(See https://www.greenend.org.uk/rjk/tech/putenv.html)
+		PATH=:/bin:/sbin:/usr/sbin:/usr/bin
+	1 Expands enviornment variables on the command line
+		(Either manually or with wordexp)
+		ls $HOME
+>>>	1 Change Prompt
+	        PS1="what is you command?"
+	        
+    WORDEXP STUFF
+	3 Does filename expansion "glob" 
+		(Hint:  Use the built in glob, or really use wordexp.)
+		http://www.gnu.org/software/libc/manual/html_node/Wordexp-Example.html
+		http://euclid.nmu.edu/~rappleto/Classes/CS426/Assignments/TheBigAssignment/wordexp-example.cc
+		ls a*b
+>>>	1 Replace "~" with the home directory
+		(wordexp can do this too)
+		rm ~/junkfile
+
+    READLINE LIBRARY 
+>>>	1 Control-L clears the screen
+>>>	1 Tab Completion 
+>>>	1 Arrow History 
+	1 Saves and reloads history to a file
+	1 change what at least 2 keys do (so ^L deletes a char and ^p clears the screen for example)
+	
+    MISC
+>>>	1 Knows how to change directory
+		(See chdir)
+		cd /fred
+>>>	1 Catch Keyboard interrupt
+		(See https://www.geeksforgeeks.org/signals-c-language/)
+	        ctrl + c = back to prompt
+	        Make sure you have a working quit/exit command first!
+	1 or 5 When they misspell a command, offer a suggestion
+		(user) lss
+                (shell) Did you mean "ls"?
+                One point is you do something with five lines of code and an array
+                Five points involves actually seeing which executables exist
+>>>	2 Can run commands from a file
+		. scriptFile.txt
+	1 Bang last command that starts with some letter.
+		Assuming in the past you ran 'rm'.
+	        !r runs rm
+	1 Bang # command
+	        !4 runs 4th command from history
+	1 Queue commands
+	        make ; make install
+	1 Can have lots of semicolons
+		ls; sleep 3; rm fred
+???	2 Automatically runs a file called .myshell when it starts <- ask about what .myshell
+	+1 Turned in 1 day early (Thursday)
+???	+2 Turned in 4 days early (Monday)
+	-2  Commands cannot have arguments (i.e. ls -l does not work).
+    
+	
+
+
+Some cases to consider
+	A person tries to run a non-executable.
+	A person tries to read or write to a non-existant file.
+	A person tries to read or write to a file they do not have permissions on.
+	A person tries a non-sensical command. (i.e. ls > foo > fee < doo < dee
+	A person tries to pipe to a non-command (i.e. ls | /tmp/foo.txt)
+	A person tries to pipe from a non-command (i.e. /tmp/foo | ls)
+	A person tries to expand a non-variable (i.e. ls $DOES_NOT_EXIST)
+	A regular expression matches no files.
+	A regular expression matches one file.
+	A regular expression matches lots of files.
+	A person tries to change directory to something that does not exist.
+		
+These programs are due the last day of class.  It will take a totally 
+excellent excuse to move this at all.
+
+1 execvp
+3 out redir
+3 outApp redir
+1 set envs
+1 change prompt
+1 ~ replaced with home directory
+1 ctrl l clears screen
+1 tab completion
+1 arrow history
+1 cd
+2? turn in two days early, last wed/mon, ask if semester or finals week?
+1 keyborard interrupt
+2 can run commands from a file
+2 automatically runs a file called .myshell on launch
+3 file input redir
+22-24

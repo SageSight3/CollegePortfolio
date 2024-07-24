@@ -1,0 +1,1 @@
+Add photo doesn't have bannedkw or dupe check

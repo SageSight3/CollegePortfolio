@@ -1,0 +1,226 @@
+.header {
+	height: 64px;
+	background-color: #9bafc7;
+	position: relative; /*https://www.w3schools.com/css/css_align.asp*/
+	display: block;
+	width: 100%;
+}
+
+img.headerImg {
+	height:100%;
+	max-width:100%;
+}
+
+.nav {
+	background-color: #9bafc7;
+	float:left;
+	position:fixed;
+	height: 100%;
+	width:128px;
+}
+
+ul.navButtonList {
+	list-style-type: none;
+	margin:0px;
+	padding:0px;
+}
+
+button.navButton {
+	background-color: #8aa2ba;
+	width:90%;
+	height:69px;
+	color: white;
+	font-family: monospace, Helvetica, sans-serif;
+	font-size: 20px;
+	margin: 4px;
+	margin-left:auto;
+	margin-right:auto;
+	word-wrap: break-word; /*https://stackoverflow.com/questions/3587390/how-can-i-make-text-appear-on-next-line-instead-of-overflowing*/
+	border-radius:4px;
+	border-color:#93acc4;
+}
+
+img.gallery {
+	margin-right:auto;
+	margin-left:auto;
+	margin-bottom: 36px;
+	margin-top: 36px;
+	display:block;
+	border-radius: 72px;
+	width:35%;
+}
+
+.headOuter {
+	display: block;
+	text-align:center;
+}
+
+.headInner {
+	color: white;
+	font-family: monospace, Helvetica, sans-serif;
+	text-align:center;
+	font-size: 48px;
+	font-style:bold;
+	border: double;
+	border-width: 6px;
+	border-radius: 15px;
+	padding: 12px;
+}
+
+.def {
+	margin: 32px 12px;
+}
+
+label.prompt {
+	color: white;
+	font-family: monospace, Helvetica, sans-serif;
+	font-size: 18px;
+}
+
+.surfHealth {
+	color: white;
+	font-family: monospace, Helvetica, sans-serif;
+	font-size: 48px;
+	font-style:bold;
+	border-width: 12px;
+	border-radius: 15px;
+	padding: 12px;
+	border:solid;
+}
+
+button.surfButton {
+	background-color: #4f97e3;
+	height:80px;
+	color: white;
+	font-family: monospace, Helvetica, sans-serif;
+	font-size: 20px;
+	margin: 0px 0px 0px 0px;
+	word-wrap: break-word; /*https://stackoverflow.com/questions/3587390/how-can-i-make-text-appear-on-next-line-instead-of-overflowing*/
+	border-radius:4px;
+	border-color:white;
+}
+
+.surfDesc {
+	color: white;
+	background-color: #4f97e3;
+	font-family: monospace, Helvetica, sans-serif;
+	font-size: 21px;
+	text-align: left;
+}
+
+.creatureList {
+	color: white;
+	font-family: monospace, Helvetica, sans-serif;
+	font-size: 24px;
+}
+
+.creatureListParent {
+	font-style: bold;
+	font-size:36px;
+	list-style-type: none;
+	color: white;
+	font-family: monospace, Helvetica, sans-serif;
+}
+
+.mapImg {
+	float:right;
+}
+
+.mapBlock {
+	background-color: #9ebbd9;
+	float:left;
+	position:absolute;
+	height: 100%;
+	width:512px;
+	height:100%;
+}
+
+.oceanWondersPadding {
+	padding: 24px;
+}
+
+.oceanWondersDesc {
+	color: white;
+	font-family: monospace, Helvetica, sans-serif;
+	text-align:left;
+	display:block;
+	font-size: 24px;
+	padding: 24px;
+}
+
+.oceanFavsSubtitle{
+	color: white;
+	font-family: monospace, Helvetica, sans-serif;
+	text-align:left;
+	font-size: 24px;
+	padding: 6px;
+}
+
+.oceanFavsForm {
+	color: white;
+	font-family: monospace, Helvetica, sans-serif;
+	text-align:left;
+	font-size: 24px;
+	padding: 6px;
+}
+
+.oceanFavsSubmit {
+	color: white;
+	font-family: monospace, Helvetica, sans-serif;
+	text-align:left;
+	font-size: 24px;
+	padding: 12px;
+	background-color: #4f97e3;
+	border-radius:4px;
+	border-color:white;
+}
+
+img.ew {
+	float:right;
+	width:25%;
+	border-radius:72px;
+}
+
+.aboutMeDesc {
+	color: white;
+	font-family: monospace, Helvetica, sans-serif;
+	text-align:left;
+	display:block;
+	font-size: 24px;
+	padding: 24px;
+}
+
+.lumaVideo {
+	display: block;
+	margin-left:auto;
+	margin-right:auto;
+	width:720px;
+	height:auto;
+	border-radius:48px;
+	margin-top:58px;
+	margin-bottom:27px;
+}
+
+
+input {
+	font-family: monospace, Helvetica, sans-serif;
+	background-color: #a0c0f0;
+	border-radius:4px;
+	border-color:white;
+}
+
+body {
+	background-image: url("images/airBubblesBG.jpeg");
+	background-repeat:no-repeat; /*https://www.w3schools.com/cssref/pr_background-image.php*/
+	background-size: cover; /*https://www.w3schools.com/cssref/pr_background-image.php*/
+	margin: 0px 0px 0px 0px;
+	position:sticky;
+}
+
+p {
+	color: white;
+	font-family: monospace, Helvetica, sans-serif;
+	text-align:center;
+	display:block;
+	font-size: 24px;
+}

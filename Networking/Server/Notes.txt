@@ -1,0 +1,124 @@
+port number?
+socket?
+read?
+buffer? a character array big enough to hold anything read sends back
+command line? ignore for now
+write? something you send from your device to target, target will acknowledge data sent
+read? pings target for a rely, then target will send reply or error
+perror? diagnostic tool, will indicate error, use for cases where a -1 was returned
+\r? return character
+\n? new line character
+GET? server get method
+GET /\r\n\r\n?, the /\r\n... indicates the end of the name of what's being requested
+GET /doesnotexist\r\n\r\n?
+argc?
+argv[]?
+./?
+port number the address of a specific progra on a machine
+socket is what's being written and read from to and from a port number
+
+write (socket, char*, int) -> write(socket, char* string?, int length) what do?
+if returns -1, something went wrong, connection? something else? doesn't indicate what though
+perror("Bad write"); will say what's wrong
+
+read(socket, char*, int) -> read(sock, buf, length) what do?
+if read returns 0, the server is done talking to you,
+read puts the string the target wants to send in the buffer, then returns the length of that string,
+the buffer itself is the string the target sent
+
+ask about
+
+be careful, must be char*, not string
+can convert string to char* with c_str()
+	ex. string h = "hi" new line h.c_str()
+
+\r?
+\n?
+GET /\r\n\r\n?
+GET /doesnotexist\r\n\r\n?
+
+****check for errors****
+
+will need to change error ifs for assignment 1
+
+null byte
+tells program where the end of an array of chars is
+
+remember to null terminate
+	char buf[1000] ... read?... returns alen... buf[alen] = 0?
+	while with visual studio, the IDE added the null byte to the end of strings automatically, is not guaranteed from
+	a server, so make sure to always null terminate any string recieved, aka null terminate the buffer
+	null terminate, by setting the last character of the buffer to 0, buf[<buflength>] = 0;
+
+int argc is the number of arguments?
+char* argv[] is the arguments array?
+
+Router
+A switching network that machines connect to that allows multiple to transmit at the same time, if they're going to different
+destinations
+has a cpu, and switches, can record network data
+
+Hub
+A wire box for connections
+
+Repeater
+transmits data sent on one frequency on another? repeats data?
+connects two types
+cpu
+management
+
+c++ compile cmd command: g++ <filename, main?>.cpp -o <file or folder name?>
+ctrl c sends kill signal to vs code program in process
+
+TTR/TTL = time to receive/time to listen - time for packet to reach target?
+
+Bandwidth - how many bits/bytes? you can send per second ex. 100Mb/s
+
+TTR = latency + size/bandwidth
+
+IPv4 wikipedia
+
+chesksum
+
+hop by hop routing
+IP/internet? doesn't map out it's route, each hop just sends data to the hop it thinks
+it's closer
+	
+	is done through the way IP addresses are assigned?
+		multiple sections? local vs global?
+		
+DHCP- dynamic host configuration protocol look into
+
+When debugging arrays/other data structures, maybe try printing out elements at an
+arbitrary known element, ex anArray[0][0]
+
+Can add pointers and ints together
+	int value added to index of pointer?
+	
+Cookies allow servers to put info on browser
+	help personalization
+	
+cookies request data from browser to server
+
+Google SEO
+	may look for links associated with certain words
+	also if other widespread sites have links to a specific site
+	
+for web server, program needs to be able recognize different file types, and write
+them in the header with Content-Type = text/html, image/jpeg, text/plain, if not any
+of those, application/octet-stream
+
+Error checking
+can write something like
+	cleanup: ...some code...
+	
+	somewhere in code
+		goto cleanup
+			will skip to cleanup
+			
+	alternatively can throw exception
+	try {
+	} catch {
+	}
+	
+ios::app all output operations are at end of the file stream

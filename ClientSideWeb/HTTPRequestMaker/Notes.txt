@@ -1,0 +1,11 @@
+let params = new URLSearchParams
+
+params.append(..., ..., etc.);
+
+fetch(this.url + "?" + params) //for get
+
+//for everything else?
+fetch(this.url, {
+	method: <request method>
+	...
+	});

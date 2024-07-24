@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vue.global.js"></script>
+    <script defer src="WolfGoatCabagge.js"></script>
+    <title>The Wolf, the Goat, and the Cabbage</title>
+    <link rel="stylesheet" type="text/css" href="WolfGoatCabbage.css">
+</head>
+<body>
+    <div id="app">
+        <div class="grid">
+            <div class="left">
+                <!--https://vuejs.org/guide/essentials/conditional.html-->
+                <span v-if="!wolfAcross"><img src="./images/wolf.jpg"></span><br>
+                <span v-if="!goatAcross"><img src="./images/goat.jpg"></span><br>
+                <span v-if="!cabbageAcross"><img src="./images/cabbage.jpg"></span><br>
+                <span v-if="!boatAcross"><img src="./images/boatLeft.jpg"></span><br>
+            </div>
+
+            <div class="right">
+                <span v-if="wolfAcross"><img src="./images/wolf.jpg"></span><br>
+                <span v-if="goatAcross"><img src="./images/goat.jpg"></span><br>
+                <span v-if="cabbageAcross"><img src="./images/cabbage.jpg"></span><br>
+                <span v-if="boatAcross"><img src="./images/boatRight.jpg"></span><br>
+            </div>
+        </div>
+        
+        <div id="textAlign">
+            <div id="text">
+                <button @click="moveWolf" :disabled="gameOver">Move wolf</button>
+                <button @click="moveGoat" :disabled="gameOver">Move goat</button>
+                <button @click="moveCabbage" :disabled="gameOver">Move cabbage</button>
+                <button @click="moveBoat" :disabled="gameOver">Move boat only</button>
+                <button @click="reset">Reset</button><br>
+                <p id="status">{{status}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

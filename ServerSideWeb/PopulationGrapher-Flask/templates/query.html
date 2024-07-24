@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Nation Pops</title>
+		<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>-->
+		<script>
+		/*
+		$(document).ready(function() {
+			//alert("getting graph");
+			$("#numOfNations").keyup(function() {
+				$("#popGraph").load("/nationPops/" + $("#numOfNations").val());
+			});
+		});
+		*/
+		//Get HTTP object
+		function getHTTPObject(){ //gets object with search term?
+			//alert("getting httpObject");
+			if(window.XMLHttpRequest) {
+				return new XMLHttpRequest();
+			} else {
+				alert("AJAX not supported in this project");
+				return null;
+			}
+		}
+		
+		//display words in table
+		function setOutput() {
+			if(httpObject.readyState == 4) {
+				//alert("lion");
+				//element must match object, div - innerHTML, input - value, etc.?
+				document.getElementById('popGraph').innerHTML = httpObject.responseText;
+			}
+		}
+		
+		//search dictionary and send results to setOutput
+		function getGraph() {
+			//alert('getGraph()'); //can use alerts to help debug JS
+			httpObject = getHTTPObject();
+			if (httpObject != null) {
+				//alert("attempting flask request");
+				//to debug php in js, go to php link directly, ex. go to localhost/wordfinder/wordfinderXAMPP.php?wordIn=a
+				if ((document.getElementById('numOfNations').value == "") || (document.getElementById('numOfNations').value.includes('-'))) { return; }
+				httpObject.open("GET", "/nationPops/" + (document.getElementById('numOfNations').value));
+				httpObject.send(null);
+				//alert("setting output");
+				httpObject.onreadystatechange = setOutput;
+			}
+		}
+		
+		//destructor for httpObject?
+		var httpObject = null;
+		
+		//console for debugging JS is console in inspect element
+		</script>
+	</head>
+	<body>
+		<form method="GET">
+			How many nations do you want to see?<br>
+			<input onkeyup="getGraph()" id="numOfNations" type="number" min="1" max="268"><!--num of rows in nations table is 268-->
+		</form>
+		<div id="popGraph">
+		</div>
+	</body>
+</html>

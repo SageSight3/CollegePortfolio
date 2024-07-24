@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure soundboard</title>
+    <!--defer means don't run the script until after the html's loaded-->
+    <script defer src="client.js"></script>
+</head>
+<body>
+    <h1>Adventure soundboard</h1>
+    <p id="soundPlaying"></p>
+    <progress id="prog" value="0" max="100">0%</progress> <!--https://www.w3schools.com/tags/tag_progress.asp-->
+    <br>
+    <!--data-<aName?> - user defined attribute-->
+    <button class="RPGSound" data-path="sounds/battle/swing.wav">Swing 1</button>
+    <button class="RPGSound" data-path="sounds/NPC/misc/wolfman.wav">Wolfman</button>
+    <button class="RPGSound" data-path="sounds/interface/interface6.wav">Interface 6</button>
+    <br>
+    <p id="soundInfo">Click a sound</p>
+</body>
+</html>

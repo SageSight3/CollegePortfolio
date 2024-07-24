@@ -1,0 +1,122 @@
+this will be pseudocode, but here's the gist
+```php
+/*change url in picture search to editPhoto.php?id=<id>
+then in editPhoto.php, have line like*/
+ $id = $_GET['id']; //or if you have another way you wanna try, that instead
+
+//for comprehension/user experience, could be worth displaying image again, so copy image echo code from picture search, and change as needed, remove editPhoto link from image though
+
+//my reccommendation would be add database handle at beginning, but idk if you have different way
+
+$displayReq = $dbHandle->prepare("SELECT Height, Width, Format FROM Photos WHERE ID = ?");
+		if($displayReq->execute(array($img))) {
+			$displayAttrs = $displayReq->fetchAll();
+		}
+		//print_r($displayAttrs);
+		echo "<img src='GetImage.php?id=" . $img . "' height='" . $displayAttrs[0][0] . "' width='" . $displayAttrs[0][1] . "' type='" . $displayAttrs[0][2] . "'><br>";
+
+//then, echo html form for edit photo
+
+echo //form, see below, highly reccommending using POST for simplicity's sake, since photo id's already in the get field, is not the only way, but i'm fucking brain dead rn and thinking giving me headache
+
+//note: while it may be possible to use an sql UPDATE statement for changing keywords, with how I've designed the keywords table, I don't know if it would make anything simpler, and could potentially see it causing more complications then just insert and delete statements, may be wrong on that, but at first glance, seems like it wouldn't be much help, up to you though, just be careful, if you do try to
+
+//add kw code
+$addKWs = preg_split($_POST['<addKWInputName>'];
+//loop through each element
+
+   //check for banned kws
+   //sql statement to do so: SELECT Keyword FROM ZekeSageBadKWs WHERE word=<kw>;<-kw would be in loop variable ex. if foreach($addKWs as $word), $word = kw
+   //i'll let you make sql table for banned words, i'll leave its name and structure to you
+   //then to check
+   if(rowcount on var holding sql query = 0) { happy } else { sad }
+
+   //check for dupes
+   //sql statement: SELECT Keyword FROM ZekeSageKeywords WHERE Keyword=<kw>
+   if (rowcount = 0) { happy } else { :( }
+
+   //if sad case for either, remember to exit after any other code you may put in
+
+   //if checks pass, run sql statement: INSERT INTO ZekeSageKeywords VALUES (<id>, <kw>);
+//end of loop
+
+//delete kw code
+
+$delKWVar = <get kws to delete from html form>
+//delete code, will vary depending on how you want to do it
+//for each kw bein deleted, sql statement: DELETE FROM ZekeSageKeywords WHERE PhotoID=<id> and Keyword=<keyword being deleted>;
+
+//delete picture from database button, will vary depending on how you want to, may be easiest just to create separate php script for this part, if wan to do button, if not separate, may have to do some research, may be simpler to just put check box with submit button, but assignment does say button specifically, link that may help: https://www.geeksforgeeks.org/how-to-call-php-function-on-the-click-of-a-button/#
+//could also be worth having a confirm delete button
+//sql that will need to be run:
+//DELETE FROM ZekeSagePhotos WHERE ID=<id>;
+//DELETE FROM ZekeSageKeywords WHERE ID=<id>;
+```
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Edit Photo or something similar, up to you</title>
+	</head>
+	<body>
+		<photo> <!--can echo first part of html before photo, if you want to put full page, but your call-->
+		<!--editPhoto.php may need to have the ?id=, as well, am unsure, may need to check research, also unsure if you need the encytype, could see it depending on how you set everything up-->
+		<form action='editPhoto.php' method='POST' enctype='multipart/form-data'>
+			<input add photo field>
+			<input delete photo field>
+			<maybe input for delete picture from database depending on how you set it up>
+			<input type='submit'><!--unsure if needed-->
+		</form>
+	</body>
+</html>
+```
+
+you can potentially copy/paste some of my code from add photo for some some parts, and it may be worth referencing you're delete user code for keyword deletion code, both form and php, will send mine, as well
+unsure if missed anything, sorry if so
+
+my delete user code
+```php
+<?php
+	error_reporting(0); //have no idea how suppress for each loop warning alone
+	require("check.php");
+	echo "<!DOCTYPE html>
+<html>
+	<head>
+		<title>Delete User</title>
+	</head>
+	<body>
+		<h4>Select who you want to remove from the database</h4>
+		<form action='DeleteUser.php' method='POST'>";
+		
+	//for help with php array input, //https://html.form.guide/php-form/php-form-checkbox/
+	$dbHandle = new PDO('mysql:host=localhost;dbname=nations', 'nations', 'nations!');
+	foreach($dbHandle->query('SELECT username from SageLogin') as $user) {
+		echo "		<input type='checkbox' id='users[]' name='users[]' value=". $user['username'] . ">
+		<label for='users[]'>" . $user['username'] . "</label><br>"; 
+	}
+		
+	echo "	<input type='submit' value='Delete'>
+	</form>
+	<a href='Protected.php'><p>Home</p></a>
+	</body>
+</html>";
+
+	$delUsers = isset($_REQUEST['users']) ? $_REQUEST['users']: ''; #https://stackoverflow.com/questions/72714864/getting-error-undefined-array-key-in-php-file-with-html-forms
+	#echo $delUsers; debug
+	foreach($delUsers as $name) {
+		#echo $name; debug
+		if ($name == "SageSight") {
+			echo "Admin can't be deleted";
+			exit(0);
+		}
+		$delete = $dbHandle->prepare("DELETE FROM SageLogin where username=?");
+		if($delete->execute(array($name))) {
+			echo $name . " has been removed<br>";
+		} else {
+			echo "DEWETE FAIWED";
+		}
+	}
+?>
+```
+if going off mine, please don't copy and paste though, since it's from outside this assignment and I wasn't supposed to be working on the login side for this project, donz wanna risk getting accused of cheating, even if Randy can be lenient, am trusting you to respect my boundaries on that

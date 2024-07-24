@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Add a Photo</title>
+	</head>
+	<body>
+		<form action='AddPhoto.php' method="POST"  enctype='multipart/form-data'>
+			<input type='file' required='required' id='fileUpload' name='fileUpload'><br>
+			
+			<!--https://www.geeksforgeeks.org/how-to-specify-that-a-user-can-enter-more-than-one-value-in-an-input-element-in-html5/#-->
+			<!--look into better ways for keyword input?-->
+			<label for ='keywords'>Separate words with a comma and space: (coin, split, railgun)</label>
+			<input type='text' id='keywords' name='keywords'><br>
+			<input type='submit' value='Add Photo'>
+		</form>
+		<a href="Login/Protected.php"><p>Home</p></a>
+	</body>
+</html>

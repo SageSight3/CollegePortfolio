@@ -1,0 +1,6 @@
+Number of throws, 10000000
+
+1 core 300ms
+2 core 179ms
+4 core 131ms
+8 core 124ms

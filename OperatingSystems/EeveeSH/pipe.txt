@@ -1,0 +1,16 @@
+DoItDoCode
+DoItDoCode.cpp
+EeveeSH
+EeveeSH.cpp
+EveeSh
+Points.txt
+Pokedex
+a.out
+in.txt
+ls.txt
+pipe.txt
+pokemanz.txt
+test.txt
+tester.sh
+umbreon.EeveeSH
+wc

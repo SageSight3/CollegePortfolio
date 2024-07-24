@@ -1,0 +1,22 @@
+audio.helen{
+	display:block;
+}
+
+img.garbo{
+	border-radius:40%;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	-webkit-filter:invert(100%);
+	filter:invert(100%);
+}
+
+img:hover {
+	opacity:40%;
+}
+
+.goob {
+	color:blue;
+	font-size:33px;
+	background-color:#643832;
+}

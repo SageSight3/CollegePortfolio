@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Delete User </title>
+	</head>
+	<body>
+		<h4>Select who you want to remove from the database</h4>
+		<form action='DeleteUser.php' method='POST'>
+			<input type='checkbox' id='users[]' name='users[]' value='$user'>
+			<label for='users[]'>$user</label><br>
+			<input type='submit' value='Delete'>
+		</form>
+		<a href='Protected.php'><p>Home</p></a>
+	</body>
+</html>

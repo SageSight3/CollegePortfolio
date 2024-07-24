@@ -1,0 +1,3 @@
+Ask if password field in sql needs too be hidden, and if so, how do?
+
+print_r prints or returns the vlaue of an array element in php

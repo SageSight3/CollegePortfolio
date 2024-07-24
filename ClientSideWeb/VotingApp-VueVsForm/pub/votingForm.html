@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting System</title>
+</head>
+<body>
+    <!--GET is considered a safe method, it should be kept to read-only operations-->
+    <form action="/numberOfCandidates" method="GET">
+        <input type="submit" value="Get Candidate Count">
+    </form>
+    <br>
+
+    <!--POST is generally used for operations that modify internal server state-->
+    <form action="/vote" method="POST">
+        <label for="candidate">Person to vote for:</label>
+        <!--the name attribute is the variable name that will be sent to the server-->
+        <input type="text" id="candidate" name="candidate"><br>
+        <input type="submit" value="Vote for Candidate">
+    </form>
+
+    <form action="/votesFor" method="GET">
+        <label for="candidate">Person to vote for:</label>
+        <!--the name attribute is the variable name that will be sent to the server-->
+        <input type="text" id="candidate" name="candidate"><br>
+        <input type="submit" value="Get Votes For Candidate">
+    </form>
+
+    <form action="/reset" method="POST">
+        <label for="pw">Voting System Reset Password:</label>
+        <!--the name attribute is the variable name that will be sent to the server-->
+        <input type="password" id="pw" name="pw"><br>
+        <input type="submit" value="Reset Voting System">
+    </form>
+
+    <form action="/totalVotes" method="GET">
+        <input type="submit" value="Get Total Votes">
+    </form>
+</body>
+</html>

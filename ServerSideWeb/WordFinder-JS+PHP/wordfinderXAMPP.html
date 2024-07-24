@@ -1,0 +1,54 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Word Finder</title>
+	</head>
+	<body>
+		<script language="javascript" type="text/javascript">
+		//Get HTTP object
+		function getHTTPObject(){ //gets object with search term?
+			//alert("getting httpObject");
+			if(window.XMLHttpRequest) {
+				return new XMLHttpRequest();
+			} else {
+				alert("AJAX not supported in this project");
+				return null;
+			}
+		}
+		
+		//display words in table
+		function setOutput() {
+			if(httpObject.readyState == 4) {
+				//alert("lion");
+				//element must match object, div - innerHTML, input - value, etc.?
+				document.getElementById('results').innerHTML = httpObject.responseText;
+			}
+		}
+		
+		//search dictionary and send results to setOutput
+		function searchWordList() {
+			//alert('searchWordList()'); //can use alerts to help debug JS
+			httpObject = getHTTPObject();
+			if (httpObject != null) {
+				//alert("attempting php request");
+				//to debug php in js, go to php link directly, ex. go to localhost/wordfinder/wordfinderXAMPP.php?wordIn=a
+				httpObject.open("GET", "wordfinderXAMPP.php?wordIn=" + (document.getElementById('wordIn').value));
+				httpObject.send(null);
+				//alert("setting output");
+				httpObject.onreadystatechange = setOutput;
+			}
+		}
+		
+		//destructor for httpObject?
+		var httpObject = null;
+		
+		//console for debugging JS is console in inspect element
+		</script>
+		<form name='wordSearch'>
+			Search a word: <input type='text' onkeyup='searchWordList();' name='wordIn' id='wordIn'><br>
+			<b>Results</b><br>
+			<div id='results'>
+			</div>		
+		</form>
+	</body>
+</html>

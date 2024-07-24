@@ -1,0 +1,13 @@
+Scence Object: {
+	sceneID:
+	choiceText:
+	flavorText:
+	images:
+	bgImg:
+	choices: [<an array of scene IDs>]
+}
+
+For progressing game, have main update method, split into getting next scene info
+and updating page
+
+

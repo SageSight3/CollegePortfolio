@@ -1,0 +1,3 @@
+ls
+ls -l
+echo General Kenobe. I've been expecting you.

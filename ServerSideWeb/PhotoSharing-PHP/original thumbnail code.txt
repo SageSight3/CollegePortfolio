@@ -1,0 +1,25 @@
+	
+	//$thumbnail = "$_FILES['fileUpload'][tmp_name']_thumbnail";
+	$thumbnail = "-"; //must be this for thumbnail command?
+	//$thumbnail = fopen('thumbnail', 'r+');
+	//echo $thumbnail/*->{'$filename'}*/;
+	$HEIGHT = 100;
+	//create thumbnail
+	if($imgFormat == "image/jpeg") {
+		$command = "djpeg < " . $_FILES['fileUpload']['tmp_name'] . "| pnmscale -ysize $HEIGHT | cjpeg >" . $thumbnail;
+	} else {
+		$command = "giftopnm < " . $_FILES['fileUpload']['tmp_name'] . "| pnmscale -ysize $HEIGHT | cjpeg >" . $thumbnail; //concatenate command around $_FILES['fileUpload']['tmp_name']
+	}
+	print "$command\n";
+	system($command);
+	echo file_get_contents($thumbnail);
+^^^
+command is wrong, here is right one:
+
+             if (its_a_JPG_file) {
+                    $command = "djpeg < $file | pnmscale -ysize $HEIGHT | cjpeg > $thumbfile";
+             }
+             else {
+                    $command = "convert -resize 300x$thumbheight $tmpname $thumbfile"; }
+             #print "$command\n";
+             system($command);
